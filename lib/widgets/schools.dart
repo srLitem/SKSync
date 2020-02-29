@@ -15,7 +15,7 @@ class _Schools extends State<Schools> {
   TextEditingController textIds = new TextEditingController();
 
   //Grid variables
-  List<String> _list = [];
+  List<String> _list = []; 
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +33,8 @@ class _Schools extends State<Schools> {
               child: Opacity(
                 opacity: emptyState(ids.schools),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 2,
-                  width: MediaQuery.of(context).size.width * 2,
+                  height: MediaQuery.of(context).size.height * 1.5,
+                  width: MediaQuery.of(context).size.width * 1.5,
                   child: SvgPicture.asset(
                     'assets/img/onboarding-man.svg',
                   ),

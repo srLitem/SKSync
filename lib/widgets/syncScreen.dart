@@ -52,7 +52,7 @@ class _SyncScreen extends State<SyncScreen> {
             Center(child: Schools()),
             Padding(
               padding: const EdgeInsets.only(
-                bottom: 50,
+                bottom: 25,
               ),
               child: Align(
                   alignment: Alignment.bottomCenter,
