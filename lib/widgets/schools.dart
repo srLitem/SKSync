@@ -29,14 +29,17 @@ class _Schools extends State<Schools> {
         ),
         child: Stack(
           children: <Widget>[
-            Center(
-              child: Opacity(
-                opacity: emptyState(ids.schools),
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 1.5,
-                  width: MediaQuery.of(context).size.width * 1.5,
-                  child: SvgPicture.asset(
-                    'assets/img/onboarding-man.svg',
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: Center(
+                child: Opacity(
+                  opacity: emptyState(ids.schools),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 1.5,
+                    width: MediaQuery.of(context).size.width * 1.5,
+                    child: SvgPicture.asset(
+                      'assets/img/onboarding-man.svg',
+                    ),
                   ),
                 ),
               ),

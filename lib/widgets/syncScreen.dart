@@ -210,7 +210,7 @@ class _SyncScreen extends State<SyncScreen> {
                       fontFamily: 'Asap'
                   )),
               content: Text(
-                'The sync has been finished, baby!',
+                'The sync has been started, baby!',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.black,

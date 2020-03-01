@@ -24,7 +24,7 @@ class _StructureState extends State<Structure> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: ChangeNotifierProvider(
-        create: (context) => Data(),
+        create: (context) => Data(), //TODO: Allow the users to clean the list data when changing screen
         child: Scaffold(
           resizeToAvoidBottomPadding: false,
           body: list(indexTap),
