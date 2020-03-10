@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:schoolkassync/widgets/structure.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(MyApp());
+Future main() async {
+  await DotEnv().load('.env');
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

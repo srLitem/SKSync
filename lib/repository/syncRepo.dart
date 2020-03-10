@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -14,8 +15,14 @@ class SyncRepoImpl implements SyncRepo{
   List<int> dataListAsInt;
 
   Future<bool> syncData(List schoolsToUpdate, String env) async{
-    String urlLogin = 'https://api.$env.schoolkassa.com/api/v2/login';
-    String urlSync = 'https://api.$env.schoolkassa.com/api/v2/parnassys/start';
+    String loginEnv = DotEnv().env['URL_LOGIN'];
+    String syncEnv = DotEnv().env['URL_SYNC'];
+    String urlLogin = 'https://api.$env${loginEnv}';
+    debugPrint(urlLogin);
+    String urlSync = 'https://api.$env${syncEnv}';
+    debugPrint(urlSync);
+    debugPrint(DotEnv().env['EMAIL']);
+    debugPrint(DotEnv().env['PASSWORD']);
 
     if(schoolsToUpdate.isEmpty || schoolsToUpdate.contains('')){
       dataListAsInt = [0];
@@ -28,7 +35,7 @@ class SyncRepoImpl implements SyncRepo{
     debugPrint('Logging in...');
     var response_log = await http.post(urlLogin,
       headers: {"Content-Type": "application/json", "Accept": "application/json"},
-      body : jsonEncode({"email": "info@schoolkassa.com","password": "olympia" }),
+      body : jsonEncode({"email": DotEnv().env['EMAIL'],"password": DotEnv().env['PASSWORD']}),
     );
 
     debugPrint('Response status: ${response_log.statusCode}');

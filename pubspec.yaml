@@ -23,6 +23,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^4.0.4
   flutter_svg: ^0.17.1
+  flutter_dotenv: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -44,5 +45,6 @@ flutter:
         - asset: assets/fonts/Asap-SemiBoldItalic.ttf
   assets:
     - assets/img/
+    - .env
 
 
